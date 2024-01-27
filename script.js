@@ -1,39 +1,42 @@
-// JavaScript
-const carousel = document.querySelector('.carousel');
-const slides = document.querySelectorAll('.slide');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
 
-let currentIndex = 0;
-const slideWidth = slides[0].clientWidth;
+document.addEventListener("DOMContentLoaded", function () {
+    const arrowButton = document.querySelector(".arrow-down");
+    const hiddenMovies = document.querySelector(".hidden-movies");
 
-// Set the initial position of the carousel
-carousel.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+    arrowButton.addEventListener("click", function () {
+        // Toggle the visibility of the additional movie widgets
+        if (hiddenMovies.style.display === "none") {
+            hiddenMovies.style.display = "block";
+        } else {
+            hiddenMovies.style.display = "none";
+        }
+    });
+});
 
-// Hide or show navigation buttons based on current slide
-function updateButtons() {
-    prevBtn.style.visibility = currentIndex === 0 ? 'hidden' : 'visible';
-    nextBtn.style.visibility = currentIndex === slides.length - 1 ? 'hidden' : 'visible';
-}
-
-// Go to the previous slide
-function goToPrevSlide() {
-    if (currentIndex > 0) {
-        currentIndex--;
-        carousel.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
-        updateButtons();
+        // script.js
+// Smooth scrolling for anchor links
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollLinks = document.querySelectorAll('a[href^="#"]');
+    for (const link of scrollLinks) {
+        link.addEventListener("click", smoothScroll);
     }
-}
 
-// Go to the next slide
-function goToNextSlide() {
-    if (currentIndex < slides.length - 1) {
-        currentIndex++;
-        carousel.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
-        updateButtons();
+    function smoothScroll(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href");
+        document.querySelector(targetId).scrollIntoView({
+            behavior: "smooth",
+        });
     }
-}
+});
+// carousel.js
 
-// Attach event listeners to the navigation buttons
-prevBtn.addEventListener('click', goToPrevSlide);
-nextBtn.addEventListener('click', goToNextSlide);
+document.addEventListener("DOMContentLoaded", function () {
+    var swiper = new Swiper(".swiper-container", {
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+});

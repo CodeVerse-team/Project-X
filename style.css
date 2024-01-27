@@ -1,24 +1,29 @@
 /* Main body */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #919e5a;
+    background-color: #353333;
     width: 100%;
+    overflow-x: hidden;
     position: relative;
 }
-a{
+
+a {
     text-decoration: none;
 }
-.Logo{
+
+.Logo {
     color: deeppink;
     font-size: 35px;
 }
-span{
+
+span {
     color: aqua;
     font-size: 35px;
 }
@@ -150,7 +155,7 @@ span{
     top: 0;
     left: 0;
     right: 0;
-    z-index: 8;
+    z-index: 10;
 }
 /* lOGIN BUTTON */
 .login-btn{
@@ -216,22 +221,625 @@ span{
     transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 }
 
+/* Hero Section */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #575050;
+    color: #ffffff;
+    padding: 1rem;
+    overflow: hidden;
+    margin: -20px;
+}
+
+.hero img {
+    max-width: 650px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgb(255 62 62 / 60%);
+    order: 5; /* Move the image to the right side */
+}
+
+.hero-content {
+    width: 40%; /* Adjust the width to fit your content */
+    padding: 1rem;
+    text-align: left;
+    color: #fff;
+    background-color: #000000;
+    overflow-x: hidden;
+    border-radius: 10px;
+    position: relative;
+    top: 50%;
+    left: 5%; /* Adjust the left position to position the content */
+    transform: translateY(-50%);
+    order: 1; /* Move the content to the left side */
+    animation: slideInLeft 1s ease-in-out; /* Use a slide-in animation from the left */
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-content .watch-now-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 25px;
+    background-color: #999329;
+    color: #000;
+    border: none;
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.watch-now-btn:hover {
+    background-color: #d7d030;
+}
+/* Swiper carousel styles */
+.swiper-container {
+    width: 100%;
+    height: 500px;
+    margin-top: 10px;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    background-color: #131212;
+    border-radius: 10px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    font-size: 24px;
+    color: var(--swiper-button-color, #fff); /* Use custom property for arrow color */
+    background-color: var(--swiper-button-bg, #f91804); /* Use custom property for arrow background color */
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.swiper-button-prev {
+    left: 20px;
+}
+
+.swiper-button-next {
+    right: 20px;
+}
+
+.swiper-slide {
+    position: absolute;
+}
+
+.swiper-slide img {
+    max-width: 780px;
+    height: 95%;
+    bottom: 40%;
+    right: 58%;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255 62 62 / 60%);
+}
+/* New CSS for the animated welcome message */
+.welcome-message {
+    position: absolute;
+    top: 20%;
+    left: 17%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+.animated-text {
+    font-size: 2rem;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid #fff; /* Add a border to simulate typing effect */
+    animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Animation Keyframes */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 17ch; /* Adjust the width based on your text length */
+    }
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #fff;
+    }
+}
+
+.hero-content {
+    width: 39%;
+    padding: 1rem;
+    text-align: left;
+    color: #fff;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    top: 50%;
+    left: 26px;
+    transform: translateY(-50%);
+}   
+
+.hero-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-content .watch-now-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 25px;
+    background-color: #cc0303;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.watch-now-btn:hover {
+    background-color: #a31c1c;
+}
+
+/* Swiper Pagination (Indicators) */
+.swiper-pagination {
+    position: absolute;
+    bottom: 20px;
+    left: 55%; /* Adjust the left position to center the indicators */
+    transform: translateX(-50%);
+}
+
+/* Swiper Navigation Buttons */
+.swiper-button-prev,
+.swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #fff;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.swiper-button-prev {
+    left: 70%;
+}
+
+.swiper-button-next {
+    right: 70%;
+}
+/* Customize the Pagination Bullets */
+.swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    background-color: red; /* Use custom property for indicator color */
+    color: rgb(219, 44, 44);
+    border-radius: 100% solid red;
+    margin: 0 10px;
+    opacity: 100%;
+    transition: opacity 0.2s ease;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--swiper-pagination-bullet-active-color, #fff); /* Use custom property for active indicator color */
+}
+
+/* Top 20 Trending Movies */
+.top-20-trending {
+    padding: 2rem;
+    background-color: #000000;
+    margin-top: 30px;
+    border-radius: 10px;
+    color: white;
+    position: relative;
+}
+.top-20-trending h2 {
+    font-family: cursive;
+    font-size: 35px;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.movie-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.movie {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    width: calc(20% - 20px);
+    margin-bottom: 40px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.movie:hover {
+    transform: translateY(-5px);
+}
+
+.movie img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie-details {
+    padding: 20px;
+}
+
+.movie-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.movie-details p {
+    font-size: 14px;
+    color: #e0e0e0;
+}
 
 
-
+/* Movie Container */
+.movie {
+    position: relative;
+    overflow: hidden;
+  }
   
-/*  footer   */
-    footer {
+  /* Movie Details */
+  .movie-details {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    transition: bottom 0.3s ease;
+  }
+  
+  /* Show Movie Details on Hover */
+  .movie:hover .movie-details {
+    bottom: 0;
+  }
+/* Style for the "Show More" button container */
+.show-more-container {
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Style for the "Show More" button link */
+.show-more-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    background-color: #999329;
+    color: #000000;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the "Show More" button */
+.show-more-link:hover {
+    background-color: #d7d030; /* Replace with the hover background color */
+}
+
+/* Style for the down arrow icon inside the "Show More" button */
+.show-more-link i {
+    margin-left: 5px;
+}
+
+/* Responsive adjustments for different screen sizes */
+@media screen and (max-width: 1200px) {
+    .movie {
+        width: calc(25% - 20px);
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .movie {
+        width: calc(33.33% - 20px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .movie {
+        width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .movie {
+        width: 100%;
+    }
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    
+}
+
+.download-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 16px;
+    display: inline-block;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+.download-btn:hover {
+    background-color: #f72d1f;
+}
+
+/* Additional Sections */
+.additional-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #f0f0f0;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.additional-section img {
+    width: 50%;
+    border-radius: 10px;
+}
+
+.additional-section .section-content {
+    width: 45%;
+    text-align: left;
+    color: #000;
+}
+
+.additional-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.additional-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.additional-section .watch-now-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.additional-section .watch-now-btn:hover {
+    background-color: #c9110f;
+}
+/* Footer */
+footer {
     background-color: #222;
     color: #fff;
-    font-size: 14px;
+    font-size: 20px;
     bottom: 0;
-    position: fixed;
+    position: relative;
+    margin: 0;
     left: 0;
     right: 0;
     text-align: center;
-    z-index: 999;
-    padding: 0 0;
+    z-index: 9;
+    padding: 1px 5px;
+}
+footer p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #3c97bf;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+footer .fa-heart {
+    color: red;
+}
+
+footer .fa-dev,
+footer .fa-instagram,
+footer .fa-linkedin,
+footer .fa-codepen,
+footer .fa-twitter-square {
+    color: #fff;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    .featured-content {
+        padding: 1rem;
+    }
+
+    .hero-content {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .featured-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .additional-section {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .additional-section img {
+        max-width: 200px;
+    }
+
+    .additional-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .additional-section p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Additional media queries can be added to optimize the layout for other screen sizes */
+itional media queries can be added to optimize the layout for other screen sizes */
+
+/* Additional Sections */
+.additional-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #f0f0f0;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.additional-section img {
+    width: 50%;
+    border-radius: 10px;
+}
+
+.additional-section .section-content {
+    width: 45%;
+    text-align: left;
+    color: #000;
+}
+
+.additional-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.additional-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.additional-section .watch-now-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.additional-section .watch-now-btn:hover {
+    background-color: #c9110f;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .featured-content {
+        padding: 1rem;
+    }
+
+    .hero-content {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .featured-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Additi
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+/*  footer   */
+footer {
+    background-color: #222;
+    color: #fff;
+    font-size: 20px;
+    bottom: 1px;
+    position: relative;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 9;
+    padding: 1px 5px;
 }
 
 footer p {
@@ -267,58 +875,4 @@ footer a {
     color: #3c97bf;
     text-decoration: none;
     margin-right:5px;
-}
-
-.youtubeBtn{
-    position: fixed;
-    left: 50%;
-    transform: translatex(-50%);
-    bottom: 45px;
-    cursor: pointer;
-    transition: all .3s;
-    vertical-align: middle;
-    text-align: center;
-    display: inline-block;
-}
-
-.youtubeBtn i{
-    font-size: 20px;
-    float: left;
-}
-
-.youtubeBtn a{
-    color: #ff0000;
-    animation: youtubeAnim 1000ms linear infinite;
-    float: right;
-}
-
-.youtubeBtn a:hover{
-    color: #c9110f;
-    transition: all .3s ease-in-out;
-    text-shadow: none;
-}
-
-.youtubeBtn i:active{
-    transform: scale(.9);
-    transition: all .3s ease-in-out;
-}
-
-.youtubeBtn span{
-    font-family: 'Lato';
-    font-weight: normal;
-    color: #fff;
-    display: block;
-    font-size: 12px;
-    float: right;
-    line-height: 20px;
-    padding-left: 5px;
-}
-
-@keyframes youtubeAnim{
-    0%,100%{
-        color: #ce3b3b;
-    }
-    50%{
-        color: #ff0000;
-    }
 }
